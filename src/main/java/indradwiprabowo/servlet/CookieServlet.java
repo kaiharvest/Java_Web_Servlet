@@ -18,6 +18,7 @@ public class CookieServlet extends HttpServlet {
         String cookieValue = req.getParameter("value");
 
         Cookie cookie = new Cookie(cookieName, cookieValue);
+        cookie.setPath("/");
 
         resp.addCookie(cookie);
         resp.getWriter().println("Success add cookie " + cookieName + ":" + cookieValue);
